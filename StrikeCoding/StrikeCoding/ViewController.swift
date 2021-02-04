@@ -17,9 +17,13 @@ class ViewController: UIViewController {
         
         bubbleSort(array)
         selectSort(array)
-        print("review ---- ")
+        insertSort(array)
+        print("review1 ---- ")
         reviewBubbleSort(array)
         reviewBubbleSort(array)
+        reviewInsertSort(array)
+        print("review2 ---- ")
+        reviewInsertSort2(array)
     }
 
     func bubbleSort(_ array: [Int]) {
@@ -76,6 +80,31 @@ class ViewController: UIViewController {
         showResult()
     }
     
+    func insertSort(_ array: [Int]) {
+        guard array.count > 1 else {
+            return
+        }
+        
+        var result = array
+        var current: Int = 0
+        for i in 0..<result.count - 1 {
+            current = result[i + 1]
+            var preIdx = i
+            // 后移
+            while preIdx >= 0 && current > result[preIdx] {
+                result[preIdx + 1] = result[preIdx]
+                preIdx -= 1
+            }
+            // 插入
+            result[preIdx + 1] = current
+        }
+        print("插入 ----")
+        print(result)
+    }
+
+}
+
+extension ViewController {
     func reviewBubbleSort(_ array: [Int]) {
         guard array.count > 1 else {
             return
@@ -118,6 +147,47 @@ class ViewController: UIViewController {
         
         print(result)
     }
-
+    
+    func reviewInsertSort(_ array: [Int]) {
+        guard array.count > 1 else {
+            return
+        }
+        
+        var result = array
+        
+        for i in 0..<result.count - 1 {
+            let current = result[i + 1]
+            var preIndex = i
+            while preIndex >= 0 && current < result[preIndex] {
+                result[preIndex + 1] = result[preIndex]
+                preIndex -= 1
+            }
+            result[preIndex + 1] = current
+        }
+        
+        print(result)
+    }
 }
 
+extension ViewController {
+    
+    func reviewInsertSort2(_ array: [Int]) {
+        guard array.count > 1 else {
+            return
+        }
+        
+        var result = array
+        
+        for i in 0..<result.count - 1 {
+            let current = result[i + 1]
+            var preIdx = i
+            while preIdx >= 0 && current > result[preIdx]{
+                result[preIdx + 1] = result[preIdx]
+                preIdx -= 1
+            }
+            result[preIdx + 1] = current
+        }
+        print("插入 ----")
+        print(result)
+    }
+}

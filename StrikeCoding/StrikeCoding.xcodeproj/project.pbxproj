@@ -15,6 +15,7 @@
 		FE545A3425CA91510065940C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE545A3225CA91510065940C /* LaunchScreen.storyboard */; };
 		FE545A3F25CA91510065940C /* StrikeCodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE545A3E25CA91510065940C /* StrikeCodingTests.swift */; };
 		FE545A4A25CA91510065940C /* StrikeCodingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE545A4925CA91510065940C /* StrikeCodingUITests.swift */; };
+		FE7287C325CD2EF400812DD1 /* BlockTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7287C225CD2EF400812DD1 /* BlockTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		FE545A4525CA91510065940C /* StrikeCodingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StrikeCodingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE545A4925CA91510065940C /* StrikeCodingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrikeCodingUITests.swift; sourceTree = "<group>"; };
 		FE545A4B25CA91510065940C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE7287C225CD2EF400812DD1 /* BlockTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				FE545A3025CA91510065940C /* Assets.xcassets */,
 				FE545A3225CA91510065940C /* LaunchScreen.storyboard */,
 				FE545A3525CA91510065940C /* Info.plist */,
+				FE7287C225CD2EF400812DD1 /* BlockTest.swift */,
 			);
 			path = StrikeCoding;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE545A2C25CA914F0065940C /* ViewController.swift in Sources */,
+				FE7287C325CD2EF400812DD1 /* BlockTest.swift in Sources */,
 				FE545A2825CA914F0065940C /* AppDelegate.swift in Sources */,
 				FE545A2A25CA914F0065940C /* SceneDelegate.swift in Sources */,
 			);

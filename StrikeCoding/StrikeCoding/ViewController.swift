@@ -24,8 +24,10 @@ class ViewController: UIViewController {
         reviewInsertSort(array)
         print("review2 ---- ")
         reviewInsertSort2(array)
+        
+//        BlockTest.showTest()
     }
-
+    
     func bubbleSort(_ array: [Int]) {
         guard array.count > 1 else {
             return
@@ -191,3 +193,4 @@ extension ViewController {
         print(result)
     }
 }
+

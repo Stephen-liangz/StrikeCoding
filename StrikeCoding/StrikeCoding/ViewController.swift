@@ -15,7 +15,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        Bubble_Sort_Insert().sortReview(array)
+        Bubble_Insert_Select().sortReview(array)
     }
     
 }

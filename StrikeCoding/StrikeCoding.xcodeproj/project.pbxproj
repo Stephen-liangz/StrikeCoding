@@ -16,7 +16,7 @@
 		FE545A3F25CA91510065940C /* StrikeCodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE545A3E25CA91510065940C /* StrikeCodingTests.swift */; };
 		FE545A4A25CA91510065940C /* StrikeCodingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE545A4925CA91510065940C /* StrikeCodingUITests.swift */; };
 		FE7287C325CD2EF400812DD1 /* BlockTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7287C225CD2EF400812DD1 /* BlockTest.swift */; };
-		FE7634E425D1369D009B92F2 /* Bubble_Sort_Insert.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7634E325D1369D009B92F2 /* Bubble_Sort_Insert.swift */; };
+		FE7634E425D1369D009B92F2 /* Bubble_Insert_Select.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7634E325D1369D009B92F2 /* Bubble_Insert_Select.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +52,7 @@
 		FE545A4925CA91510065940C /* StrikeCodingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrikeCodingUITests.swift; sourceTree = "<group>"; };
 		FE545A4B25CA91510065940C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FE7287C225CD2EF400812DD1 /* BlockTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockTest.swift; sourceTree = "<group>"; };
-		FE7634E325D1369D009B92F2 /* Bubble_Sort_Insert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bubble_Sort_Insert.swift; sourceTree = "<group>"; };
+		FE7634E325D1369D009B92F2 /* Bubble_Insert_Select.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bubble_Insert_Select.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,7 +137,7 @@
 		FE7634E225D13675009B92F2 /* Sort */ = {
 			isa = PBXGroup;
 			children = (
-				FE7634E325D1369D009B92F2 /* Bubble_Sort_Insert.swift */,
+				FE7634E325D1369D009B92F2 /* Bubble_Insert_Select.swift */,
 			);
 			path = Sort;
 			sourceTree = "<group>";
@@ -276,7 +276,7 @@
 				FE7287C325CD2EF400812DD1 /* BlockTest.swift in Sources */,
 				FE545A2825CA914F0065940C /* AppDelegate.swift in Sources */,
 				FE545A2A25CA914F0065940C /* SceneDelegate.swift in Sources */,
-				FE7634E425D1369D009B92F2 /* Bubble_Sort_Insert.swift in Sources */,
+				FE7634E425D1369D009B92F2 /* Bubble_Insert_Select.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

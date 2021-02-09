@@ -254,3 +254,55 @@ extension Bubble_Insert_Select {
         print("选择排序: \(selectResult)")
     }
 }
+
+extension Bubble_Insert_Select {
+    func reviewSort(_ array: [Int]) {
+        guard array.count > 1 else {
+            return
+        }
+        
+        // Insert sort
+        var insertArray = Array.init(array)
+        for i in 0..<insertArray.count - 1 {
+            let current = insertArray[i + 1]
+            var preIdx = i
+            while preIdx >= 0 && insertArray[preIdx] > current {
+                insertArray[preIdx + 1] = insertArray[preIdx]
+                preIdx -= 1
+            }
+            insertArray[preIdx + 1] = current
+        }
+        
+        print("插入排序: \(insertArray)")
+        
+        // Select sort
+        var selectResult = Array.init(array)
+        for i in 0..<selectResult.count {
+            var minIdx = i
+            for j in i..<selectResult.count {
+                if selectResult[j] < selectResult[minIdx] {
+                    minIdx = j
+                }
+            }
+            selectResult.swapAt(minIdx, i)
+        }
+        print("选择排序：\(selectResult)")
+        
+        // Bubble sort
+        var bubbleResult = Array.init(array)
+        for i in 0..<bubbleResult.count {
+            var bubbleFlag = false
+            for j in 0..<bubbleResult.count - i - 1 {
+                if bubbleResult[j] > bubbleResult[j + 1] {
+                    bubbleResult.swapAt(j, j + 1)
+                    bubbleFlag = true
+                }
+            }
+            if !bubbleFlag {
+                print("提前完成排序的 冒泡排序：\(bubbleResult)")
+                return
+            }
+        }
+        print("冒泡排序：\(bubbleResult)")
+    }
+}

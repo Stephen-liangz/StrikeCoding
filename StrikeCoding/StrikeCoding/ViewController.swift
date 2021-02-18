@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    var array = [1, 20, 3, 60, 100, 2, 2, 3, 6, 9]
+    var array = [1, 20, 3, 60, 100, 2, 2, 3, 6, 9, 50, 90, 600, 101]
     
     override func viewDidLoad() {
         super.viewDidLoad()

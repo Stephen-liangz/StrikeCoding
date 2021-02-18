@@ -25,14 +25,14 @@ extension Merge_Quick {
         }
         let result = mergeSort_c(array: array)
         print("归并排序：\(result)")
+        
+        reviewMergeSort(array)
     }
     
     
     /// 归并排序递归调用方法
     /// - Parameters:
     ///   - array: 排序数组
-    ///   - p: 下标
-    ///   - q: 下标
     private func mergeSort_c(array: [Int]) -> [Int]{
         guard array.count >= 2 else {
             return array
@@ -45,11 +45,11 @@ extension Merge_Quick {
         let pArray = mergeSort_c(array: leftArray)
         let rArray = mergeSort_c(array: rightArray)
         
-        let result = merge(array: array, pArray: pArray, qArray: rArray)
+        let result = merge( pArray: pArray, qArray: rArray)
         return result
     }
     
-    private func merge(array: [Int], pArray: [Int], qArray: [Int]) -> [Int] {
+    private func merge( pArray: [Int], qArray: [Int]) -> [Int] {
         var i = 0
         var j = 0
         let count = pArray.count + qArray.count
@@ -69,32 +69,58 @@ extension Merge_Quick {
                 j += 1
             }
         }
-//        var index = 0
-//        while i < pArray.count || j < qArray.count {
-//            var left = 0
-//            var right = 0
-//
-//            if i < pArray.count && j < qArray.count {
-//                if left < right {
-//                    result[index] = left
-//                    i += 1
-//                }else{
-//                    result[index] = right
-//                    j += 1
-//                }
-//            }else if i < pArray.count && j == qArray.count {
-//                left = pArray[i]
-//                result[index] = left
-//
-//            }else if j < qArray.count && i == pArray.count {
-//                right = qArray[j]
-//                result[index] = right
-//            }
-//
-//            index += 1
-//        }
         
         return result
     }
     
+}
+
+private extension Merge_Quick {
+    func reviewMergeSort(_ array: [Int]) {
+        guard array.count > 2 else {
+            return
+        }
+        print("归并排序：\(mergeSort_Recursion(array))")
+    }
+    
+    func mergeSort_Recursion(_ array: [Int]) -> [Int] {
+        guard array.count >= 2 else {
+            return array
+        }
+        
+        let midIdx = array.count / 2
+        
+        let leftA = Array(array[0..<midIdx])
+        let rightA = Array(array[midIdx..<(array.count)])
+        
+        let sortedLeftArray = mergeSort_Recursion(leftA)
+        let sortedRightArray = mergeSort_Recursion(rightA)
+        
+        return reviewMerge(leftArray: sortedLeftArray, rightArray: sortedRightArray)
+    }
+    
+    func reviewMerge(leftArray: [Int], rightArray: [Int]) -> [Int]{
+        let count = (leftArray.count + rightArray.count)
+        var result = Array.init(repeating: 0, count: count)
+        var i = 0
+        var j = 0
+        
+        for idx in 0..<count {
+            if i >= leftArray.count {
+                result[idx] = rightArray[j]
+                j += 1
+            }else if j >= rightArray.count {
+                result[idx] = leftArray[i]
+                i += 1
+            }else if leftArray[i] < rightArray[j] {
+                result[idx] = leftArray[i]
+                i += 1
+            }else {
+                result[idx] = rightArray[j]
+                j += 1
+            }
+        }
+        
+        return result
+    }
 }

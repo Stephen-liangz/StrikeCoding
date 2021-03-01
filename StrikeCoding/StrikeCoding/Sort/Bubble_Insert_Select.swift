@@ -33,8 +33,8 @@ class Bubble_Insert_Select: NSObject {
             print(result)
         }
         
-        var flag = false
         for i in 0..<result.count {
+            var flag = false
             for j in 0..<result.count - i - 1 {
                 if result[j] > result[j+1] {
                     result.swapAt(j, j+1)
@@ -49,7 +49,6 @@ class Bubble_Insert_Select: NSObject {
         
         showResult()
     }
-
     
     /// 插入排序
     /// 1.将数据分成已排序区间和未排序区间；
@@ -84,7 +83,6 @@ class Bubble_Insert_Select: NSObject {
         
         showResult()
     }
-
     
     /// 选择排序，
     /// 1.将数据分成已排序区和未排序区；
@@ -304,5 +302,65 @@ extension Bubble_Insert_Select {
             }
         }
         print("冒泡排序：\(bubbleResult)")
+    }
+}
+
+//MARK: - review Bubble_Insert_Select 2021-03-01 16:15:00
+private extension Bubble_Insert_Select {
+    func selectSorttr(_ array: [Int]) {
+        guard array.count > 1 else {
+            return
+        }
+        
+        var result = array
+        
+        for i in 0..<result.count - 1 {
+            let current = result[i + 1]
+            var preIdx = i
+            while preIdx >= 0 && current > result[preIdx] {
+                result[preIdx + 1] = result[preIdx]
+                preIdx -= 1
+            }
+            result[preIdx + 1] = current
+        }
+    }
+    
+    func bubbleSortt(_ array: [Int]) {
+        guard array.count > 1 else {
+            return
+        }
+        
+        var result = array
+       
+        for i in 0..<result.count - 1 {
+            var isSwap = false
+            for j in 0..<result.count - i - 1{
+                if result[j] < result[j + 1] {
+                    result.swapAt(j, j + 1)
+                    isSwap = true
+                }
+            }
+            if !isSwap {
+                return
+            }
+        }
+    }
+
+    func insertSorttt(_ array: [Int]) {
+        guard array.count > 1 else {
+            return
+        }
+        
+        var result = array
+        
+        for i in 0..<result.count {
+            var minIdx = i
+            for j in i..<result.count {
+                if result[j] > result[minIdx] {
+                    minIdx = j
+                }
+            }
+            result.swapAt(i, minIdx)
+        }
     }
 }

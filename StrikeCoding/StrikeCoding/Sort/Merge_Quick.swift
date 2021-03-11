@@ -124,3 +124,45 @@ private extension Merge_Quick {
         return result
     }
 }
+
+private extension Merge_Quick {
+    /// 快速排序
+    /// - Parameter array: 需要排序的数组
+    func quickSort<T: RandomAccessCollection & MutableCollection>(_ array: inout T) where T.Element: Comparable{
+        guard array.count > 1 else {
+            return
+        }
+        quickSort_c(&array, array.startIndex, array.index(before: array.endIndex))
+        print("快速排序：\(array)")
+    }
+    
+    /// 快速排序递归方法
+    /// - Parameters:
+    ///   - array: 数组
+    ///   - p: 数组开始下标
+    ///   - r: 数组末尾下标
+    func quickSort_c<T: RandomAccessCollection & MutableCollection>(_ array: inout T, _ low: T.Index, _ high: T.Index) where T.Element: Comparable {
+        guard low < high else {
+            return
+        }
+        let m = partition(&array, low, high)
+        quickSort_c(&array, low, array.index(before: m))
+        quickSort_c(&array, array.index(after: m), high)
+    }
+    
+    
+    func partition<T:RandomAccessCollection & MutableCollection>(_ array: inout T, _ low: T.Index, _ high: T.Index) -> T.Index where T.Element: Comparable {
+        let pivot = array[low]
+        var j = low
+        var i = array.index(after: low)
+        while i <= high {
+            if array[i] <= pivot {
+                array.formIndex(after: &j)
+                array.swapAt(i, j)
+            }
+            array.formIndex(after: &i)
+        }
+        array.swapAt(low, j)
+        return j
+    }
+}

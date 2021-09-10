@@ -125,7 +125,7 @@ private extension Merge_Quick {
     }
 }
 
-private extension Merge_Quick {
+extension Merge_Quick {
     /// 快速排序
     /// - Parameter array: 需要排序的数组
     func quickSort<T: RandomAccessCollection & MutableCollection>(_ array: inout T) where T.Element: Comparable{
@@ -141,7 +141,7 @@ private extension Merge_Quick {
     ///   - array: 数组
     ///   - p: 数组开始下标
     ///   - r: 数组末尾下标
-    func quickSort_c<T: RandomAccessCollection & MutableCollection>(_ array: inout T, _ low: T.Index, _ high: T.Index) where T.Element: Comparable {
+    private func quickSort_c<T: RandomAccessCollection & MutableCollection>(_ array: inout T, _ low: T.Index, _ high: T.Index) where T.Element: Comparable {
         guard low < high else {
             return
         }
@@ -151,7 +151,7 @@ private extension Merge_Quick {
     }
     
     
-    func partition<T:RandomAccessCollection & MutableCollection>(_ array: inout T, _ low: T.Index, _ high: T.Index) -> T.Index where T.Element: Comparable {
+    private func partition<T:RandomAccessCollection & MutableCollection>(_ array: inout T, _ low: T.Index, _ high: T.Index) -> T.Index where T.Element: Comparable {
         let pivot = array[low]
         var j = low
         var i = array.index(after: low)
